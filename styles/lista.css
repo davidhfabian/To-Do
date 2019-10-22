@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    background-color: #eaeded;
+}
+
+section.tabla {
+    margin-top: 60px;
+    width: 80%;
+    height: auto;
+    color: rgba(0, 0, 0, 0.8);
+    /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .4); */
+
+    
+}
+
+
+
+button.tabla-btn {
+    margin: 0 10px;
+    width: 40px;
+    padding: 7px;
+    border-radius: 4px;
+    background: #fff;
+    border: none;
+    border: 1px solid #69c9d6;
+    color: #69c9d6;
+    font-size: 20px;
+}
+button.tabla-btn:hover {
+    background: #69c9d6;
+    border: 1px solid transparent;
+    color: #fff;
+   
+    transition: .4s all ease;
+}
+
+
+form.form-eliminar{
+    display: flex;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+th{
+    border: 2px solid #eaeded;
+    padding: 7px;
+    background: #fff;
+    color: #69c9d6;
+}
+td {
+    border: 1px solid #eaeded;
+    padding: 7px;
+    background: #B2EBF2;
+    min-height: 60px;
+    max-width: 220px;
+    overflow-wrap: break-word;
+}
+td.description{
+    color: #666;
+}
+table .camp-btn{
+    background: none;
+    border: none;
+  width: 130px;
+}
+
+.inputo {
+    display: none;
+}
+
+/*<<<<<<<<<<<<<<<<<'Advetencias'>>>>>>>>>>>>>>>>>*/
+.error{
+    color: red;
+    font-size: 13px;
+    
+}
+.correct{
+    color: green;
+    font-size: 13px;
+   
+}

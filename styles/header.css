@@ -1,0 +1,39 @@
+header{
+    height: 60px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .4);
+}
+a{
+    text-decoration: none;
+}
+header div.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header div.logo-container{
+    color: black;
+}
+header div.logo-container h1.logo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-kerning: 2px;
+    font-variant: small-caps;
+}
+header div.avatar-container{
+    display: flex;
+    height: 45px;
+    width: 45px;
+
+}
+header div.avatar-container img.avatar{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+

@@ -1,0 +1,38 @@
+section.form-add{
+    color: #666;
+    margin: 10px 0;
+    width: 60%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .4);
+}
+section.form-add input,section.form-add textarea {
+    width: 100%;
+    padding: 7px 5px;
+    border-radius: 10px;
+    border: 1px solid #0097A7;
+    
+}
+section.form-add button {
+    margin: 10px auto;
+    padding: 7px;
+    border-radius: 4px;
+    background: #fff;
+    border: none;
+    border: 1px solid #0097A7;
+    color: #0097A7;
+    font-size: 16px;
+    box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, .4);
+}
+section.form-add button:hover {
+    background: #0097A7;
+    border: 1px solid transparent;
+    color: #fff;
+    transition: .4s all ease;
+}
+section.form-add .button{
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
