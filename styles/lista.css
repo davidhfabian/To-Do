@@ -20,6 +20,9 @@ section.tabla {
     width: 80%;
     height: auto;
     color: rgba(0, 0, 0, 0.8);
+    background: #69c9d6;
+    padding: 20px;
+    border-radius: 20px;
     /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .4); */
 
     
@@ -60,15 +63,13 @@ table {
 }
 
 th{
-    border: 2px solid #eaeded;
     padding: 7px;
-    background: #fff;
-    color: #69c9d6;
+    height: 50px;
+    color: #fff;
 }
 td {
-    border: 1px solid #eaeded;
+    border-top: 1px solid #eaeded;
     padding: 7px;
-    background: #B2EBF2;
     min-height: 60px;
     max-width: 220px;
     overflow-wrap: break-word;
@@ -79,7 +80,7 @@ td.description{
 table .camp-btn{
     background: none;
     border: none;
-  width: 130px;
+    width: 110px;
 }
 
 .inputo {

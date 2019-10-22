@@ -14,6 +14,8 @@ header div.header-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    
 }
 header div.logo-container{
     color: black;
@@ -37,3 +39,33 @@ header div.avatar-container img.avatar{
     border-radius: 50%;
 }
 
+/*<<<<<<<<<<<<<<<<<'menu login'>>>>>>>>>>>>>>>>>*/
+.active{
+    display: block !important;
+}
+
+div.menu-login{
+    width: 130px;
+    height: 100px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -105px;
+    background: #fff;
+    display: none;
+
+
+
+}
+div.menu-login ul{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+div.menu-login ul li {
+    padding: 7px 0;
+}
+div.menu-login ul li a{
+    color: #666;
+}
