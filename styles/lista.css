@@ -23,7 +23,7 @@ section.tabla {
     background: #69c9d6;
     padding: 20px;
     border-radius: 20px;
-    /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .4); */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .4);
 
     
 }
@@ -35,20 +35,29 @@ button.tabla-btn {
     width: 40px;
     padding: 7px;
     border-radius: 4px;
-    background: #fff;
     border: none;
-    border: 1px solid #69c9d6;
-    color: #69c9d6;
+    background: #69c9d6;
+    border: 1px solid #fff;
+    color: #fff;
     font-size: 20px;
 }
 button.tabla-btn:hover {
-    background: #69c9d6;
-    border: 1px solid transparent;
-    color: #fff;
+    
+    background: #fff;
+    border: 1px solid #69c9d6;
+    color: #69c9d6;
    
     transition: .4s all ease;
 }
 
+#realizada{
+    color: green;
+    font-size: 20px;
+}
+#inrealizada{
+    color: red;
+    font-size: 20px;
+}
 
 form.form-eliminar{
     display: flex;

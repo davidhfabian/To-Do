@@ -1,76 +1,30 @@
 <?php
-include_once('inicio.php');
+include_once('autoload.php');
 
 $user = 'root';
 $password = '52752';
-
-
 $conexion = mysqli_connect('localhost', $user, $password, 'e-coomerce-prueba');
 $resultadoConsulta = mysqli_query($conexion, "select * from usuarios");
 
-$error = [];
+
 if($_POST){
     $name = $_POST['name'];
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $email = $_POST['email'];
     
-    // VALIDACION NOMBRE 
-    if(strlen($name) === 0){
-        $error['name'] = 'llena este campo';
-    } else if (strlen($name) < 5){
-        $error['name'] = 'min 5 caracteres';
-    } else if (preg_match_all('/[0-9]+/', $name)){
-        $error['name'] = 'Nombre no puede contener numeros';
-    }
-    // VALIDACION USERNAME
-    if(strlen($username) === 0){
-        $error['username'] = 'llena este campo';
-    } else if (strpos($username, ' ')) {
-
-        $error['username'] = 'Tu nombre de usuario no debe tener espacios';
-    }
-    // VALIDACION EMAIL
-    if(strlen($email) === 0){
-        $error['email'] = 'llena este campo';
-    }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-        $error['email'] = 'El formato de email es incorrecto';
-    }
-    // VALIDACION PASSWORD
-    if(strlen($_POST['password']) === 0){
-        $error['password'] = 'llena este campo';
-    } else if (strlen($_POST['password']) > 16) {
-
-        $error['password'] = 'La clave debe tener menos de 16 caracteres';
-    } else if (!preg_match('`[a-z]`', $_POST['password'])) {
-
-        $error['password'] = "La clave debe tener al menos una letra minúscula";
-    } else if (!preg_match('`[A-Z]`', $_POST['password'])) {
-
-        $error['password'] = "La clave debe tener al menos una letra mayuscula";
-    } else if (!preg_match('`[0-9]`', $_POST['password'])) {
-
-        $error['password'] = "La clave debe tener al menos un caracter numerico";
-    }
-    
+    $error = validadorRegistro($_POST);
 
     // AGREGAR A BASE DE DATOS:
-
     if(empty($error)) {
-        $_SESSION['neme'] = $name;
+        // $_SESSION['id'] = $_POST['id'];
+        $_SESSION['name'] = $name;
         $agregarUsuario = mysqli_query($conexion, "insert into usuarios (name, username, email, password) value ('$name', '$username', '$email', '$password' )");
         header("location: index.php");
 
     }
 
-
 }
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -78,7 +32,7 @@ if($_POST){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro</title>
+    <title>Registro To-Do</title>
     <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>

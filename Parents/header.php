@@ -2,20 +2,23 @@
     <header class="header">
         <div class="header-container container">
             <div class="logo-container">
-                <a href="#">
+                <a href="index.php">
                     <h1 class="logo">To-Do</h1>
                 </a>
             </div>
             <div class="avatar-container">
-                <a href="#" id="btn-login">
+                <a href="profile.php" id="btn-login">
                     <img class="avatar" src="../images/default.png" alt="avatar">
                 </a>
             </div>
             <div class="menu-login">
                 <nav>
                     <ul>
-                        <li><a href="http://"  rel="noopener noreferrer">Mi perfil</a></li>
-                        <li><a href="http://" ta rel="noopener noreferrer">Cerrar session</a></li>
+                        <?php ?>
+                        <!-- <li><a href="http://" >Iniciar sessiòn</a></li>
+                        <li><a href="http://" >Registrate</a></li> -->
+                        <li><a href="profile.php" >Mi perfil</a></li>
+                        <li><a href="logout.php" >Cerrar session</a></li>
                     </ul>
                 </nav>
             </div>

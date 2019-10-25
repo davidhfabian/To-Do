@@ -37,6 +37,11 @@ header div.avatar-container img.avatar{
     width: 100%;
     object-fit: cover;
     border-radius: 50%;
+    border: 2px solid transparent;
+}
+header div.avatar-container img.avatar:hover{
+    border: 2px solid #ccc;
+    transition: .7s all ease;
 }
 
 /*<<<<<<<<<<<<<<<<<'menu login'>>>>>>>>>>>>>>>>>*/
