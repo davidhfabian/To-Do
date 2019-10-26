@@ -51,16 +51,16 @@ header div.avatar-container img.avatar:hover{
 
 div.menu-login{
     width: 130px;
-    height: 100px;
-    padding: 10px;
+    height: 115px;
+    padding: 0 10px;
     position: absolute;
     right: 0;
-    bottom: -105px;
+    bottom: -120px;
     background: #fff;
     display: none;
-
-
-
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
 }
 div.menu-login ul{
     display: flex;
@@ -73,4 +73,8 @@ div.menu-login ul li {
 }
 div.menu-login ul li a{
     color: #666;
+}
+header div.menu-login strong{
+    color:  rgba(0, 0, 0, .7);
+    font-size: 13px;        
 }

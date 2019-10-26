@@ -11,7 +11,6 @@ if (isset($_GET['filtro'])) {
 }
 
 
-
 $conexion = mysqli_connect('localhost', $user, $password, 'e-coomerce-prueba');
 $resultadoConsulta = mysqli_query($conexion, "select * from users where tarea like '%$filtro%'");
 
@@ -42,10 +41,10 @@ mysqli_close($conexion);
                         </a>
                     </td>
                 <?php  } else { ?>
-                    <td >
+                    <td>
                         <a href="#">
                             <i id="inrealizada" class="fas fa-times-circle"></i></td>
-                        </a>    
+                    </a>
                 <?php } ?>
                 <td><strong class="tarea"><?= $array_fila['tarea'] ?></strong></td>
                 <td class="description">

@@ -44,17 +44,17 @@ if($_POST){
             <div>
                 <label for="name">Nombre Completo</label><br>
                 <span class="error"><?=$error['name'] ?? ''?></span>
-                <input type="text" name="name" id="" autocomplete="off" value="<?=$name?>">
+                <input type="text" name="name" id="" autocomplete="off" value="<?=$name ?? ''?>">
             </div>
             <div>
                 <label for="username">Nombre de usuario</label><br>
                 <span class="error"><?=$error['username'] ?? ''?></span>
-                <input type="text" name="username" id="" autocomplete="off" value="<?=$username?>">
+                <input type="text" name="username" id="" autocomplete="off" value="<?=$username ?? ''?>">
             </div>
             <div>
                 <label for="email">Email</label><br>
                 <span class="error"><?=$error['email'] ?? ''?></span>
-                <input type="email" name="email" id="" value="<?=$email?>">
+                <input type="email" name="email" id="" value="<?=$email ?? ''?>">
             </div>
             <div>
                 <label for="password">Contraseña</label><br>

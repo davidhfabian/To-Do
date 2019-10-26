@@ -62,7 +62,7 @@ mysqli_close($conexion);
 <body>
     <?php require_once("Parents/header.php"); ?>
     <div>
-        <h1 style="text-aline: center">Bienvenido <?=$_SESSION['name'] ?? 'Usuario'?>!</h1>
+        <h1 style="text-aline: center">Bienvenido <?=$_SESSION['name'] ?? 'Invitado'?>!</h1>
     </div>
     <!-- <section class="input-filter">
         <h3>Filtrado</h3>

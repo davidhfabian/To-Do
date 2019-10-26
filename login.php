@@ -1,3 +1,13 @@
+<?php
+    require_once('autoload.php');
+
+    if($_POST){
+        
+        $error = validadorLogin($_POST);
+
+        $username = $_POST['username'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,7 +29,7 @@
             <div>
                 <label for="username">Email o Nombre de usuario</label><br>
                 <span class="error"><?= $error['username'] ?? '' ?></span>
-                <input type="text" name="username" id="" autocomplete="off" value="<?= $username ?>">
+                <input type="text" name="username" id="" autocomplete="off" value="<?= $username ?? '' ?>">
             </div>
 
             <div>
