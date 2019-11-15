@@ -40,8 +40,11 @@
             <div>
                 <button type="submit">Iniciar sesion</button>
             </div>
-
         </form>
+        <div class="register">
+            <p>¿Todavia no tienes una cuenta?</p>
+            <a href="register.php">Registrate</a>
+        </div>
     </section>
 </body>
 

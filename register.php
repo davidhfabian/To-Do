@@ -1,6 +1,6 @@
 <?php
 include_once('autoload.php');
-
+echo getcwd() . "\n";
 $user = 'root';
 $password = '52752';
 $conexion = mysqli_connect('localhost', $user, $password, 'e-coomerce-prueba');

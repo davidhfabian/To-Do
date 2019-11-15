@@ -25,4 +25,4 @@
             </div>
         </div>
     </header>
-    <script src="../scripts/header-app.js"></script>
+    <script src="scripts/header-app.js"></script>

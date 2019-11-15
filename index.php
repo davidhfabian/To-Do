@@ -8,7 +8,6 @@ if (isset($_GET['filtro'])) {
     $filtro = $_GET['filtro'];
 }
 
-$whileTarea = "where tarea";
 $conexion = mysqli_connect('localhost', $user, $password, 'e-coomerce-prueba');
 $resultadoConsulta = mysqli_query($conexion, "select * from users where tarea like '%$filtro%'");
  if (isset($_GET['id']) ) {
@@ -18,14 +17,15 @@ $resultadoConsulta = mysqli_query($conexion, "select * from users where tarea li
         header('location: index.php');
     
      }
-    if ($_POST) {
+if ($_POST) {
         
     $tarea = $_POST['tarea'] ?? '';
     $descripcion = $_POST['descripcion'] ?? '';
     $_SESSION['error'] = '';
     $_SESSION['correct'] = '';
     if (strlen($tarea) > 3) {
-        $agrega = mysqli_query($conexion, "insert into users (tarea, estado, descripcion, fecha_realizada) values ('$tarea', 0, '$descripcion', 'pendiente')");
+        $fechaCreada= date('Y-m-d H:i:s');
+        $agrega = mysqli_query($conexion, "insert into users (tarea, estado, descripcion, fecha_realizada) values ('$tarea', 0, '$descripcion', '$fechaCreada')");
         if($agrega){
             $_SESSION['correct'] = "Registro agregado";
         }

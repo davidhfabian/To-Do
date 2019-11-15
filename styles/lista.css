@@ -63,8 +63,6 @@ form.form-eliminar{
     display: flex;
 }
 
-
-
 table {
     border-collapse: collapse;
     width: 100%;
@@ -86,12 +84,24 @@ td {
 td.description{
     color: #666;
 }
+td.fecha{
+    color: #666;
+}
+
 table .camp-btn{
     background: none;
     border: none;
     width: 110px;
 }
-
+table .fecha{
+    width: 110px;
+    text-align: center;
+    font-size: .8em;
+}
+table .estado{
+    width: 80px;
+    text-align: center;
+}
 .inputo {
     display: none;
 }

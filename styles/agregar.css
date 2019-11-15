@@ -12,6 +12,7 @@ section.form-add input,section.form-add textarea {
     padding: 7px 5px;
     border-radius: 10px;
     border: 1px solid #0097A7;
+    outline: none;
     
 }
 section.form-add button {

@@ -65,8 +65,7 @@
             $error['username'] = "No se ha encontrado ninguna cuenta asociada a este nombre de usuario o dirección de correo electrónico";
             return $error;
         }
-       /*  if(password_verify($password,'hash')){
-        } */
+        
         return Null;
     }
 

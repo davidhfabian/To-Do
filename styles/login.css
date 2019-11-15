@@ -59,3 +59,16 @@ span.error{
     color: red;
     font-size: 13px;
 }
+section.login div.register{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 30px;
+}
+section.login div.register p{
+    font-size: .9em;
+}
+section.login div.register a{
+    text-decoration: none;
+    color: #69c9d6
+}
