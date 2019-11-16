@@ -1,91 +1,67 @@
 <?php
-include_once('autoload.php');
+require_once 'autoload.php';
 
-$user = 'root';
-$password = '52752';
-$filtro = '';
-if (isset($_GET['filtro'])) { 
-    $filtro = $_GET['filtro'];
+if (!autenticador()) {
+    header('location: task_list.php');
 }
 
-$conexion = mysqli_connect('localhost', $user, $password, 'e-coomerce-prueba');
-$resultadoConsulta = mysqli_query($conexion, "select * from users where tarea like '%$filtro%'");
- if (isset($_GET['id']) ) {
-         $borrar = $_GET['id'];
-         $borrado = mysqli_query($conexion, ("delete from users where id=$borrar"));
-    
-        header('location: index.php');
-    
-     }
 if ($_POST) {
-        
-    $tarea = $_POST['tarea'] ?? '';
-    $descripcion = $_POST['descripcion'] ?? '';
-    $_SESSION['error'] = '';
-    $_SESSION['correct'] = '';
-    if (strlen($tarea) > 3) {
-        $fechaCreada= date('Y-m-d H:i:s');
-        $agrega = mysqli_query($conexion, "insert into users (tarea, estado, descripcion, fecha_realizada) values ('$tarea', 0, '$descripcion', '$fechaCreada')");
-        if($agrega){
-            $_SESSION['correct'] = "Registro agregado";
-        }
-        
-        header('location: index.php');
-    } else {
-        $_SESSION['error'] = "No se pudo agregar el registro en las base de datos";
-    }
+
+    $error = validadorLogin($_POST);
+    $username = $_POST['username'];
 }
-
-
-$cantidadRegistros = mysqli_num_rows($resultadoConsulta);
-// var_dump($cantidadRegistros) ;
-
-
-mysqli_close($conexion);
-
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles/lista.css">
-    <link rel="stylesheet" href="styles/agregar.css">
-    <link rel="stylesheet" href="styles/header.css">
+    <title>Login ToDO</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 
 <body>
-    <?php require_once("Parents/header.php"); ?>
-    <div>
-        <h1 style="text-aline: center">Bienvenido <?=$_SESSION['name'] ?? 'Invitado'?>!</h1>
-    </div>
-    <!-- <section class="input-filter">
-        <h3>Filtrado</h3>
-        <form method="get">
-            <div>
-                <input type="text" name="filtro" placeholder="Filtro" value="<?=$filtro ?? ''?>">
-            </div>
-            <div class="terminada">
-                <label for="terminada">Terminada <input type="checkbox" name="terminada" >
-                </label>
-            </div>
-            <button type="submit">Filtrar</button>
-            </form>
-        
-    </section> -->
-    <?php 
-    require_once("lista.php");
-    require_once("addTarea.php");
-    ?>
-   
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js"></script>
+    <div id="particles-js" >
+        <div class="titulo" >
+            <div class="content">
+                <section class="login">
 
+                    <form action="index.php" method="post">
+
+                        <h2 class="title animated jello">Login To-Do</h2>
+
+
+                        <div>
+                            <label for="username">Email o Nombre de usuario</label><br>
+                            <span class="error"><?=$error['username'] ?? ''?></span>
+                            <input type="text" name="username" id="" autocomplete="off" value="<?=$username ?? ''?>">
+                        </div>
+
+                        <div>
+                            <label for="password">Contraseña</label><br>
+                            <span class="error"><?=$error['password'] ?? ''?></span>
+                            <input type="password" name="password" id="" autocomplete="off">
+                        </div>
+                        <div>
+                            <button type="submit">Iniciar sesion</button>
+                        </div>
+                    </form>
+                    <div class="register">
+                        <p>¿Todavia no tienes una cuenta?</p>
+                        <a href="register.php">Registrate</a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="scripts/particles.min.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>

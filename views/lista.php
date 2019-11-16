@@ -1,12 +1,12 @@
 <section class="tabla">
         <?php if (!empty($tasks)): ?>
     <table>
-
+<span class="correct"><?=$_SESSION['delete'] ?? ''?></span>
         <tr class="titulos">
             <th class="estado">Estado</th>
             <th>Tarea</th>
             <th>Descripcion </th>
-            <th class="fecha">Fecha creada </th>
+            <th class="fecha">Fecha realizada</th>
             <th class="camp-btn"></th>
 
 
@@ -29,7 +29,7 @@
                 <td class="description">
                     <p><?=$task['descripcion']?></p>
                 </td>
-                <td class="fecha"> <?=$task['fecha_realizada']?> </td>
+                <td class="fecha"> <?=!empty($task['fecha_realizada']) ? date("d/m/Y", strtotime($task['fecha_realizada'])) : 'No realizada'?> </td>
                 <td class="camp-btn">
                         <a class="tabla-btn" href='editTask.php?id=<?=$task['id']?>' ><i class="fas fa-edit"></i></a>
                         <a class="tabla-btn" href='deleteTask.php?id=<?=$task['id']?>' ><i class="fas fa-trash-alt"></i></i></a>

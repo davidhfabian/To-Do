@@ -51,11 +51,11 @@ header div.avatar-container img.avatar:hover{
 
 div.menu-login{
     width: 130px;
-    height: 115px;
+    height: 170px;
     padding: 0 10px;
     position: absolute;
     right: 0;
-    bottom: -120px;
+    bottom: -174px;
     background: #fff;
     display: none;
     border-bottom-left-radius: 4px;

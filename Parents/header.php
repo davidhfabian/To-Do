@@ -18,6 +18,7 @@
                         <li><strong>Hola, <?=$_SESSION['name'] ?? 'Invitado'?>!</strong></li>
                         <!-- <li><a href="http://" >Iniciar sessiòn</a></li>
                         <li><a href="http://" >Registrate</a></li> -->
+                        <li><a href="task_list.php" >Mis listas de tareas</a></li>
                         <li><a href="profile.php" >Mi perfil</a></li>
                         <li><a href="logout.php" >Cerrar session</a></li>
                     </ul>

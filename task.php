@@ -2,6 +2,17 @@
 include_once 'autoload.php';
 require_once 'functions/database.php';
 
+if (autenticador()) {
+    header('location: index.php');
+}
+
+if (isset($_GET['t'])) {
+    $_SESSION['taskList'] = $_GET['t'];
+}
+
+$id_user = $_SESSION['id'];
+$id_task_list = $_SESSION['taskList'];
+
 ?>
 
 <!DOCTYPE html>
