@@ -8,7 +8,6 @@ if (autenticador()) {
 
 if (isset($_POST['editTask'])) {
     $id = $_GET['task'];
-    var_dump("entra podt");
     $tarea = isset($_POST['tarea']) ? trim($_POST['tarea']) : '';
     $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : '';
     $estado = isset($_POST['estado']) ? trim($_POST['estado']) : 0;
