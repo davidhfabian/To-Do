@@ -32,7 +32,6 @@ if (isset($_POST['editTask'])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    var_dump("entra get");
 
     $editTask = $conexion->prepare("SELECT * FROM task WHERE id = $id LIMIT 1");
     $editTask->execute();
